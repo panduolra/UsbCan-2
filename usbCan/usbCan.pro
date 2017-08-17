@@ -4,29 +4,27 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += core gui
+QT += widgets
 
 TARGET = usbCan
 TEMPLATE = app
 
 win32 {
+    DEFINES += _WINDOWS
     msvc {
         LIBS += ./lib/zcoma.lib
     }
     else {
         DEFINES += WIN32MINGW
+        LIBS += ./lib/zcoma.lib
     }
 
 }
 
 unix {
-
+    DEFINES += _LINUX
 }
-
-DEFINES += _LINUX
-#LIBS += -L./lib -lzcoma
 
 INCLUDEPATH += ./utils
 
