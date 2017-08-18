@@ -26,11 +26,17 @@ unix {
     DEFINES += _LINUX
 }
 
-INCLUDEPATH += ./utils
+debug {
+    DEFINES +=
+}
+
+INCLUDEPATH += ./utils ./service
 
 SOURCES += main.cpp\
-        widget.cpp
+        widget.cpp \
+    service/Service.cpp
 
 HEADERS  += widget.h \
     utils/zcoma.h \
-    utils/initDefine.h
+    utils/initDefine.h \
+    service/Service.h

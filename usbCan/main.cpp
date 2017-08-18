@@ -1,16 +1,18 @@
 #include "widget.h"
-
-#include "initDefine.h"
-
 #include <QApplication>
 #include <QDebug>
+
+#include "Service.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    DWORD err = ZCOMA_Open(DEV_TYPE_USBCAN_E_P, 0, 0);
-    qDebug()<<"err code!!!"<<err;
+    if ( Service::instance()->init() == ZCOMA_NO_ERROR ) {
+        Service::instance()->printNodeConfigInfo();
+    }
+
+    Service::instance()->exit();
 
     Widget* widget = new Widget;
     widget->show();

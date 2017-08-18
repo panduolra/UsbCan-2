@@ -15,6 +15,9 @@
 #endif
 
 #define DEV_TYPE_USBCAN_E_P 101
-#define CHANNELS_USBCAN_E_P 1
+#define DEV_INDEX_USBCAN_E_P 0
+#define CH_INDEX_USBCAN_E_P 0
+
+#define ZCOMA_NO_ERROR 0
 #include "zcoma.h"
 #endif // INITDEFINE_H
