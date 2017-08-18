@@ -10,6 +10,10 @@ int main(int argc, char *argv[])
 
     if ( Service::instance()->init() == ZCOMA_NO_ERROR ) {
         Service::instance()->printNodeConfigInfo();
+        qDebug()<<"---------------Test Success!---------------";
+    }
+    else {
+        qDebug()<<"---------------Test Failed!---------------";
     }
 
     Service::instance()->exit();

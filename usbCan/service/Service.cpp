@@ -17,6 +17,7 @@ Service::Service()
 
 DWORD Service::init()
 {
+    qDebug()<<"Device init...";
     DWORD errCode = 0;
     errCode = ZCOMA_Open(DEV_TYPE_USBCAN_E_P, DEV_INDEX_USBCAN_E_P, 0);
     if ( errCode != 0 ) {
@@ -69,6 +70,7 @@ DWORD Service::exit()
         qDebug()<<"ZCOMA_Init error, error code:"<<errCode;
         return errCode;
     }
+    qDebug()<<"Device exited!";
 
     return ZCOMA_NO_ERROR;
 }
