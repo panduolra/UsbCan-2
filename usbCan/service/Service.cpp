@@ -1,4 +1,5 @@
 #include "Service.h"
+#include <stdlib.h>
 #include <QDebug>
 
 Service *Service::m_instance = NULL;
@@ -13,6 +14,9 @@ Service *Service::instance()
 
 Service::Service()
 {
+    m_initConfig.dwBaudrate = 1000;
+    m_initConfig.dwNodeID = 1;
+    m_initConfig.dwHeartbeat = 3000;
 }
 
 DWORD Service::init()
