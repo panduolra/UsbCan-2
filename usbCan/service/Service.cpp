@@ -17,6 +17,13 @@ Service::Service()
     m_initConfig.dwBaudrate = 1000;
     m_initConfig.dwNodeID = 1;
     m_initConfig.dwHeartbeat = 3000;
+
+    m_nodeConfig.dwNodeID = 1;
+    m_nodeConfig.dwGuardMode = 0;
+    m_nodeConfig.dwGuardTime = 1000;
+    m_nodeConfig.dwRetryFactor = 3;
+    m_pOutHandle = (HANDLE)malloc(sizeof(HANDLE));
+    m_hdChannel = (HANDLE)malloc(sizeof(HANDLE));
 }
 
 DWORD Service::init()
