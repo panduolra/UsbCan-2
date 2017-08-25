@@ -22,8 +22,8 @@ Service::Service()
     m_nodeConfig.dwGuardMode = 0;
     m_nodeConfig.dwGuardTime = 1000;
     m_nodeConfig.dwRetryFactor = 3;
-    m_pOutHandle = (HANDLE)malloc(sizeof(HANDLE));
-    m_hdChannel = (HANDLE)malloc(sizeof(HANDLE));
+    m_pOutHandle = this;
+    m_hdChannel = this;
 }
 
 DWORD Service::init()
